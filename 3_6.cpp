@@ -12,6 +12,12 @@ enum class Tpraca_silnikow {
     pol_naprzod = 50,
     cala_naprzod = 100 };
 
+enum Todtwarzanie { 
+    play,
+    stop,
+    pause = 16, 
+    rewind_tape };
+
 int main(int argc, char *argv[ ])
 {
     cout << "Kapitan na mostku sygnalizuje telegrafem." << endl;
@@ -41,7 +47,7 @@ int main(int argc, char *argv[ ])
     enum {
         liczba_kotwic = 2,
         liczba_ladowni = 6 };
-
+        
     for(int k = 0 ; k < liczba_kotwic ; ++k) 
     {
         cout << "Opuszczamy kotwice nr " << k << " (z " << liczba_kotwic << ")"<< endl;
