@@ -6,7 +6,7 @@ int main()
     cout << "Jestem w main, k = " << k << "\n";
     {
         int k = 10; 
-        cout << "po lokalnej definicji k = " << k << endl; 
+        cout << "po lokalnej definicji k = " << k << "\nale obiekt globalny k = " << ::k << endl; 
     } 
     cout << "Poza blokiem k = " << k << endl; 
 }
