@@ -35,6 +35,7 @@ int main()
     char co='T';
     while (co=='T' || co=='t') 
     {    
+        begining:
         cout << "Ktory chcesz program? [1-2]: ";
         cin >> t;
         switch (t)
@@ -43,6 +44,10 @@ int main()
                 i1(); break;
             case 2:
                 i2(); break;
+            default:
+                cout << "Nie ma takiego programu!\n";
+                goto begining;
+                break;
         }
         cout << "\nZakonczono prace programu. Chcesz jeszcze raz? (T/N): ";
         cin >> co;
