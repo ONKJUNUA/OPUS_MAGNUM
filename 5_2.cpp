@@ -14,6 +14,7 @@ int main()
     cout << "Sterowanie sonda kosmiczna przejal wlasnie " << imie << endl;
     if(imie == "Jurek") 
         cout << "(To jest najgorszy pilot)\n";
+    else cout << "Skoro nie jestes Jurkiem, to wyjawie ci tajemnice...";
     
     string rozkaz;
     rozkaz = "Naprawic " + solar; 
