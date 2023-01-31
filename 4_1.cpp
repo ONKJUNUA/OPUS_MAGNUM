@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int i;
+    for(i = 0 ; i < 32 ; i = i + 1)
+    {
+        if(i % 8)
+            cout << "\t";
+        else if (i != 0)
+            cout << "\n";
+        cout << i+1;
+    }
+}
