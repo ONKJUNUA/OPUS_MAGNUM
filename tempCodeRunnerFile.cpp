@@ -1,1 +1,1 @@
-potega
+suma_dotychczas
