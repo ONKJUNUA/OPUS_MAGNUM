@@ -40,18 +40,35 @@ constexpr int porownaj(char a, char b)
     return a < b ? -1 : (a == b) ? 0 : +1;
 }
 
+constexpr double tablica_sinusow[ ] = {
+nasz_sinus(stopnie_na_radiany(0)),
+nasz_sinus(stopnie_na_radiany(2.5)),
+nasz_sinus(stopnie_na_radiany(5)),
+nasz_sinus(stopnie_na_radiany(7.5))
+};
+
+constexpr double wbezwzgledna(const double & n)
+{
+return n < 0 ? -n : n;
+}
+
+//****************************************************************\\
+
 int main()
 {
+    cout << endl;
     constexpr double buty_kilometrowe = mile_na_kilometry(7); 
     cout << "7-milowe buty to inaczej buty " << buty_kilometrowe << "-kilometrowe" << endl;
     constexpr double dystans_mile = 2614;
     constexpr double dystans_km = mile_na_kilometry(dystans_mile); 
     cout << "Odleglosc Paryz - Dakar to " << dystans_km << " kilometrow" << endl;
+    cout <<endl;
     for(int m = 100 ; m <= 600 ; m+= 100)
     {
         cout << " " << m << " mil odpowiada "
             << mile_na_kilometry(m) << " km." <<endl; 
     }
+    cout <<endl;
     constexpr int r = porownaj('a', 'a');
     switch (r)
     {
@@ -59,18 +76,25 @@ int main()
         case 0: cout << "Sa rowne" << endl; break;
         case -1: cout << "Pierwszy mniejszy od drugiego" << endl; break;
     }
-    
+    cout <<endl;
     constexpr double dl_orbity_marsa = dwa_pi_r(promien_orb_marsa);
     cout << "Obwod orbiry Marsa: " << dl_orbity_marsa << endl;
-    
+    cout <<endl;
     constexpr long long silnia14 = silnia(14);
     cout << "Silnia: 14! to " << silnia14 << endl;
-
+    cout <<endl;
     cout << "Nasz_sinus (1 rad) = " << nasz_sinus(1) << endl 
         << "Biblioteczny sinus (1 rad) = " << sin(1) << endl;
-
+    cout <<endl;
     cout << "Nasz_sinus (45 stopni) = "
         << nasz_sinus(stopnie_na_radiany(45)) << endl
         << "Biblioteczny sinus (45 stopni) = " << sin(stopnie_na_radiany(45))
         << endl;
+    cout <<endl;
+    for(int i = 0 ; i < 4 ; ++i)
+        cout << "Sinus " << i*2.5 << " stopni to = " << tablica_sinusow[i] << endl;
+    cout <<endl;
+    const double x = wbezwzgledna(promien_orb_marsa);
+    cout << "Wartosc bezwzgledna z promienia_orb_marsa " << x << endl;
+    cout <<endl;
 }
