@@ -11,6 +11,20 @@ constexpr long long silnia(int n)
     return n > 0 ? n * silnia(n - 1) : 1;
 }
 
+constexpr double nasz_sinus(double x)
+{
+    return x
+    - (x*x*x) /silnia(3)
+    + (x*x*x*x*x)/silnia(5)
+    - (x*x*x*x*x*x*x) / silnia(7)
+    + (x*x*x*x*x*x*x*x*x) / silnia(9);
+}
+
+constexpr double stopnie_na_radiany(double stopni)
+{
+    return pi* stopni / 180;
+}
+
 constexpr double dwa_pi_r(const double & promien) 
 {
     return 2 * pi* promien ;
@@ -51,4 +65,12 @@ int main()
     
     constexpr long long silnia14 = silnia(14);
     cout << "Silnia: 14! to " << silnia14 << endl;
+
+    cout << "Nasz_sinus (1 rad) = " << nasz_sinus(1) << endl 
+        << "Biblioteczny sinus (1 rad) = " << sin(1) << endl;
+
+    cout << "Nasz_sinus (45 stopni) = "
+        << nasz_sinus(stopnie_na_radiany(45)) << endl
+        << "Biblioteczny sinus (45 stopni) = " << sin(stopnie_na_radiany(45))
+        << endl;
 }
