@@ -29,5 +29,40 @@ int main()
     pokaz_wektor2D(arkusz, "arkusz liczb (z klamra inicjalizacyjna)" );
 
     vector<vector<int> > tabliczka {5,vector<int>(5)};
+    tabliczka[1][3] = 222;
+    tabliczka[0][3] = 111;
     pokaz_wektor2D(tabliczka, "tabliczka (napompowana)" );
+
+    vector<vector<int>> rozklad;
+    rozklad.resize(3);
+    for(int rz = 0 ; rz < 3; ++rz)
+        rozklad[rz].resize(5);
+    rozklad[1][1] = 11;
+    pokaz_wektor2D(rozklad, "rozklad jazdy");
+
+    rozklad[1].resize(3);
+    pokaz_wektor2D(rozklad, "po skroceniu rzedu nr 1 rozklad jazdy - ");
+    rozklad.resize(1);
+    pokaz_wektor2D(rozklad, "po zmniejszaniu liczby rzedow ");
+
+    vector<vector<int> > pole_bitwy; 
+    for(int rz = 0 ; rz < 3 ; ++rz) 
+    {
+        vector<int> dodawany_rzad; 
+        for(int k = 0 ; k < 5 ; ++k) { 
+            dodawany_rzad.push_back(100*rz + k); 
+        }
+        pole_bitwy.push_back( dodawany_rzad); 
+        pokaz_wektor2D(pole_bitwy, "Biezaca tresc pola bitwy morskiej"); 
+    }
+
+    pole_bitwy[1].push_back(750);
+    pole_bitwy.push_back(vector<int> {11, 12, 13} );
+    pokaz_wektor2D(pole_bitwy, " pole_bitwy po dwukrotnej zmianie rozmiarow" );
+
+    pole_bitwy[0].pop_back();
+    pokaz_wektor2D(pole_bitwy, "pole bitwy (po pop_back jednego elementu)");
+    pole_bitwy.pop_back();
+    pokaz_wektor2D(pole_bitwy, "pole bitwy (po pop_back jednego rzedu)");
+
 }
