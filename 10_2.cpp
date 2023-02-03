@@ -4,6 +4,16 @@
 #include <vector> 
 using namespace std;
 
+void modyfikuj_wektor2D(vector<vector<int>> & tabl)
+{
+    for(auto & rzad : tabl )
+    {
+        for(auto & elem : rzad ) {
+            elem = -elem;
+        }
+    }
+}
+
 void pokaz_wektor2D(vector<vector<int>> tabl, string opis) 
 {
     cout << "\n"<< opis << " ma rzedow: " << tabl.size() << endl; 
@@ -16,6 +26,17 @@ void pokaz_wektor2D(vector<vector<int>> tabl, string opis)
         }
     cout << endl;
     }
+}
+
+void pokaz_wektor1D(vector<int> tabl, string opis) 
+{
+    cout << "\n" << opis << " ma elementow: " << tabl.size() << endl;
+    int dlugosc_kreski = tabl.size() * 7; 
+    string kreska(dlugosc_kreski, '*'); 
+    cout << kreska << "\n|";
+    for(auto elem : tabl)
+        cout << setw(4) << elem << " | "; 
+    cout << '\n' << kreska << endl;
 }
 
 int main()
@@ -65,4 +86,10 @@ int main()
     pole_bitwy.pop_back();
     pokaz_wektor2D(pole_bitwy, "pole bitwy (po pop_back jednego rzedu)");
 
+    cout << "========Funkcja mogaca modyfikowac wektor 2D " << endl;
+    modyfikuj_wektor2D(pole_bitwy);
+    pokaz_wektor2D(pole_bitwy, "Po modyfikacji tresc pola bitwy morskiej");
+
+    pokaz_wektor1D(arkusz[1], "rzad nr 1 arkusza");
+    pokaz_wektor1D(pole_bitwy[1], "rzad nr 1 pola bitwy");
 }
